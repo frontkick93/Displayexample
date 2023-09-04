@@ -4,11 +4,12 @@ const app = express();
 const cors = require('cors');
 
 const dbconfig = {
-    user:'liuzihui',
-    password:'P@ssword1993',
-    server:'liuzihui.database.windows.net',
-    database: 'contracts'
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    server: process.env.DB_SERVER,
+    database: process.env.DB_NAME
 };
+
 
 const pool = new sql.ConnectionPool(dbconfig);
 
